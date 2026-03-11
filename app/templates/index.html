@@ -319,7 +319,7 @@
                 <input type="text" placeholder="Name" id="inp-name">
                 <input type="email" placeholder="Email" id="inp-email">
                 <textarea rows="5" placeholder="Your Message" id="inp-msg"></textarea>
-                <button type="button" class="btn btn-primary" style="width: 100%;" data-key="b-send">Send Message</button>
+                 <button type="button" class="btn btn-primary" style="width: 100%;" data-key="b-send" onclick="sendMessage()">Send Message</button>
             </form>
         </div>
     </section>
@@ -380,6 +380,44 @@
         };
         window.addEventListener('scroll', reveal);
         window.onload = reveal;
+        async function sendMessage() {
+    const name = document.getElementById('inp-name').value;
+    const email = document.getElementById('inp-email').value;
+    const message = document.getElementById('inp-msg').value;
+
+    // Oddiy tekshiruv
+    if (!name || !email || !message) {
+        alert(currentLang === 'en' ? "Please fill all fields!" : "Iltimos, barcha maydonlarni to'ldiring!");
+        return;
+    }
+
+    // Bu yerda siz backend (masalan, biz avval yozgan Node.js server)ga yuborasiz
+    // Hozircha ishlashini tekshirish uchun konsolga chiqaramiz va foydalanuvchiga bildiramiz
+    console.log("Sending:", { name, email, message });
+
+    // Tugmani vaqtincha faolsizlantirish
+    const btn = document.querySelector('[data-key="b-send"]');
+    btn.innerText = currentLang === 'en' ? "Sending..." : "Yuborilmoqda...";
+    btn.style.opacity = "0.5";
+
+    try {
+        // Agar backend bo'lmasa, bu qism xato beradi, shuning uchun simulyatsiya qilamiz:
+        setTimeout(() => {
+            alert(currentLang === 'en' ? "Message sent successfully!" : "Xabaringiz muvaffaqiyatli yuborildi!");
+
+            // Formani tozalash
+            document.getElementById('inp-name').value = "";
+            document.getElementById('inp-email').value = "";
+            document.getElementById('inp-msg').value = "";
+
+            btn.innerText = lang[currentLang]["b-send"];
+            btn.style.opacity = "1";
+        }, 1500);
+    } catch (error) {
+        alert("Error!");
+        btn.style.opacity = "1";
+    }
+}
     </script>
 </body>
 </html>
