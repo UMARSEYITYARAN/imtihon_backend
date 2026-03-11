@@ -256,33 +256,33 @@
         </div>
     </section>
 
-    <section id="projects">
-    <span class="section-tag reveal">Projects</span>
+   <section id="projects">
+    <span class="section-tag reveal" data-key="p-tag">Projects</span>
 
     <div class="bento-grid">
 
         <div class="bento-card reveal">
             <a href="https://p17.pythonanywhere.com/" target="_blank"><img src="{% static 'photo_2026-02-18_19-30-56.jpg' %}" alt="Project 1" style="width:100%; border-radius:20px; margin-bottom:1rem;"></a>
-            <h3>Portfolio Website</h3>
-            <p style="color: var(--text-dim); margin-top:0.5rem;">
+            <h3 data-key="p1-t">Portfolio Website</h3>
+            <p style="color: var(--text-dim); margin-top:0.5rem;" data-key="p1-d">
                 Modern personal portfolio website with animation and dark UI.
             </p>
         </div>
 
         <div class="bento-card reveal">
             <a href="https://p17.pythonanywhere.com/" target="_blank"><img src="{% static 'photo_2026-02-18_19-30-56.jpg' %}" alt="Project 2" style="width:100%; border-radius:20px; margin-bottom:1rem;"></a>
-            <div class="overlay-text">My Telegram Channel</div>
+            <div class="overlay-text" data-key="p2-overlay">My Telegram Channel</div>
 
-            <h3>Python AI Assistant</h3>
-            <p style="color: var(--text-dim); margin-top:0.5rem;">
+            <h3 data-key="p2-t">Python AI Assistant</h3>
+            <p style="color: var(--text-dim); margin-top:0.5rem;" data-key="p2-d">
                 Voice controlled assistant built with Python and speech recognition.
             </p>
         </div>
 
         <div class="bento-card reveal">
             <a href="https://p17.pythonanywhere.com/" target="_blank"><img src="{% static 'photo_2026-02-18_19-30-56.jpg' %}" alt="Project 3" style="width:100%; border-radius:20px; margin-bottom:1rem;"></a>
-            <h3>Hand Gesture Volume Control</h3>
-            <p style="color: var(--text-dim); margin-top:0.5rem;">
+            <h3 data-key="p3-t">Hand Gesture Volume Control</h3>
+            <p style="color: var(--text-dim); margin-top:0.5rem;" data-key="p3-d">
                 Control computer volume using hand gestures with OpenCV and Mediapipe.
             </p>
         </div>
@@ -343,15 +343,24 @@
                 "s2-t": "UI/UX Design", "s2-d": "User-centered designs with a premium feel.",
                 "c-title": "Let's build together.", "b-send": "Send Message"
             },
-            uz: {
-                "n-home": "Asosiy", "n-about": "Men haqimda", "n-services": "Xizmatlar", "n-projects": "Loyihalar",
-                "h-tag": "Ishga tayyorman", "h-desc": "Frontend Dasturchi va UI Mutaxassisi. Men toza kod va jahon darajasidagi dizaynni birlashtirgan interaktiv raqamli mahsulotlarni yarataman.",
-                "b-work": "Loyihalarim", "b-contact": "Bog'lanish", "a-tag": "Hikoyam", "a-title": "Veb kelajagini yaratamiz.",
-                "a-p": "Men Umar Qosimovman, har bir piksel muhim deb hisoblaydigan dasturchiman. Maqsadim murakkab g'oyalarni oddiy va go'zal tajribalarga aylantirishdir.",
-                "sk-t": "Mahorat", "s1-t": "Veb Dasturlash", "s1-d": "Zamonaviy, moslashuvchan va juda tezkor veb-saytlar.",
-                "s2-t": "UI/UX Dizayn", "s2-d": "Premium darajadagi foydalanuvchiga yo'naltirilgan dizaynlar.",
-                "c-title": "Birga yaratamiz.", "b-send": "Xabarni yuborish"
-            }
+          uz: {
+        "n-home": "Asosiy", "n-about": "Men haqimda", "n-services": "Xizmatlar", "n-projects": "Loyihalar",
+        "h-tag": "Ishga tayyorman", "h-desc": "Frontend Dasturchi va UI Mutaxassisi. Men toza kod va jahon darajasidagi dizaynni birlashtirgan interaktiv raqamli mahsulotlarni yarataman.",
+        "b-work": "Loyihalarim", "b-contact": "Bog'lanish", "a-tag": "Hikoyam", "a-title": "Veb kelajagini yaratamiz.",
+        "a-p": "Men Umar Qosimovman, har bir piksel muhim deb hisoblaydigan dasturchiman. Maqsadim murakkab g'oyalarni oddiy va go'zal tajribalarga aylantirishdir.",
+        "sk-t": "Mahorat", "s1-t": "Veb Dasturlash", "s1-d": "Zamonaviy, moslashuvchan va juda tezkor veb-saytlar.",
+        "s2-t": "UI/UX Dizayn", "s2-d": "Premium darajadagi foydalanuvchiga yo'naltirilgan dizaynlar.",
+        "c-title": "Birga yaratamiz.", "b-send": "Xabarni yuborish",
+        // Loyihalar bo'limi - O'zbek tili
+        "p-tag": "Loyihalar",
+        "p1-t": "Portfolio Veb-sayti",
+        "p1-d": "Animatsiya va qorong'i (dark) UI dizaynga ega zamonaviy shaxsiy portfolio veb-sayti.",
+        "p2-overlay": "Mening Telegram Kanalim",
+        "p2-t": "Python Sun'iy Intellekt Yordamchisi",
+        "p2-d": "Python va ovozni aniqlash texnologiyasi yordamida yaratilgan, ovoz bilan boshqariladigan yordamchi.",
+        "p3-t": "Qo'l Harakati Orqali Ovozni Boshqarish",
+        "p3-d": "OpenCV va Mediapipe yordamida kompyuter ovozini qo'l harakatlari orqali boshqarish."
+    }
         };
 
         let currentLang = 'en';
